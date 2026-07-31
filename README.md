@@ -11,8 +11,9 @@
 | 入口 | 说明 |
 | --- | --- |
 | [site](site) | VitePress 静态站源码，适合部署到 Cloudflare Pages |
-| [book/manuscript.md](book/manuscript.md) | 全书合并稿，适合通读和导出 |
-| [book/chapters](book/chapters) | 13 章拆分稿，适合逐章审阅 |
+| [book/chapters](book/chapters) | 唯一人工维护的分章正文源 |
+| [book/appendices](book/appendices) | 唯一人工维护的附录源 |
+| `book/manuscript.md` | 由 `npm run book:build` 生成的全书合并稿 |
 | [docs/planning/book-blueprint.md](docs/planning/book-blueprint.md) | 顶层规划、章节标准、交付边界 |
 | [docs/writing-template.md](docs/writing-template.md) | 统一写作模板 |
 | [project/pricing-platform](project/pricing-platform) | 多语言协同电商价格计算平台源码 |
@@ -47,7 +48,6 @@ Go 与 Python 服务代码也已放入仓库。若本机安装 Go/Python，可�
 
 ```powershell
 npm install
-npm run site:sync
 npm run docs:build
 ```
 
@@ -55,7 +55,7 @@ npm run docs:build
 
 | 配置项 | 值 |
 | --- | --- |
-| Build command | `npm run site:sync && npm run docs:build` |
+| Build command | `npm run docs:build` |
 | Output directory | `site/.vitepress/dist` |
 | Node version | `22` |
 
@@ -63,6 +63,24 @@ npm run docs:build
 
 ```powershell
 npm run docs:dev
+```
+
+## 内容维护约定
+
+`book/chapters/` 和 `book/appendices/` 是唯一人工维护源。
+
+以下文件/目录均为生成物，不需要手工修改：
+
+- `book/manuscript.md`
+- `site/ebook/chapters/`
+- `site/ebook/appendices/`
+- `site/ebook/full-manuscript.md`
+- `dist/`
+
+修改书稿后运行：
+
+```powershell
+npm run docs:build
 ```
 
 ## 版权协议

@@ -2,8 +2,10 @@
 
 ## 明早验收入口
 
-1. 全书合并稿：`book/manuscript.md`
-2. HTML 阅读版：`dist/Java视角下的Go与Python全栈协同实战.html`
+1. 分章维护源：`book/chapters/`
+2. 附录维护源：`book/appendices/`
+3. 全书合并稿：`book/manuscript.md`（生成物）
+4. HTML 阅读版：`dist/Java视角下的Go与Python全栈协同实战.html`（生成物）
 3. 分章正文：`book/chapters/`
 4. 附录：`book/appendices/`
 5. 实战源码：`project/pricing-platform/`
@@ -24,4 +26,4 @@
 
 ## 验收建议
 
-先阅读 `dist/Java视角下的Go与Python全栈协同实战.html` 快速看整体，再抽查第 3、6、9、12、13 章。源码侧优先验证 Java 价格服务，因为它已通过本机真实请求测试。
+先运行 `npm run docs:build` 生成最新站点，再抽查第 3、6、9、12、13 章。源码侧优先验证 Java 价格服务，因为它已通过本机真实请求测试。

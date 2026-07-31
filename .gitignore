@@ -52,6 +52,10 @@ __pycache__/
 venv/
 
 # Generated ebook exports
-dist/*.pdf
-dist/*.epub
-dist/*.mobi
+dist/
+
+# Generated from canonical book sources
+book/manuscript.md
+site/ebook/chapters/
+site/ebook/appendices/
+site/ebook/full-manuscript.md

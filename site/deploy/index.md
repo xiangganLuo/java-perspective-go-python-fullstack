@@ -17,7 +17,6 @@
 
 ```bash
 npm ci
-npm run site:sync
 npm run docs:build
 ```
 
@@ -26,6 +25,5 @@ npm run docs:build
 ## 内容更新流程
 
 1. 修改 `book/chapters` 或 `book/appendices`。
-2. 运行 `npm run site:sync` 同步到 VitePress 站点目录。
-3. 运行 `npm run docs:build` 验证静态站构建。
-4. 推送到托管平台触发部署。
+2. 运行 `npm run docs:build`，它会自动生成合并稿并同步 VitePress 页面。
+3. 推送到托管平台触发部署。

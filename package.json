@@ -4,10 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev site --host 0.0.0.0",
-    "docs:build": "vitepress build site",
+    "book:build": "node tools/build-book.mjs",
+    "docs:dev": "npm run site:sync && vitepress dev site --host 0.0.0.0",
+    "docs:build": "npm run site:sync && vitepress build site",
     "docs:preview": "vitepress preview site --host 0.0.0.0",
-    "site:sync": "node tools/sync-vitepress-site.mjs"
+    "export:html": "npm run book:build && node tools/export-html.mjs",
+    "site:sync": "npm run book:build && node tools/sync-vitepress-site.mjs"
   },
   "devDependencies": {
     "vitepress": "^1.6.4"

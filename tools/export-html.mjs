@@ -1,8 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
+import { manuscript } from "./book-structure.mjs";
 
 const root = process.cwd();
-const input = path.join(root, "book/manuscript.md");
+const input = path.join(root, manuscript.target);
 const output = path.join(root, "dist/Java视角下的Go与Python全栈协同实战.html");
 const markdown = fs.readFileSync(input, "utf8");
 

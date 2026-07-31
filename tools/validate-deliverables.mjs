@@ -1,10 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
+import { appendices, chapters, manuscript } from "./book-structure.mjs";
 
 const root = process.cwd();
 const required = [
   "README.md",
-  "book/manuscript.md",
+  manuscript.target,
   "docs/planning/book-blueprint.md",
   "docs/writing-template.md",
   "docs/protocols/api-contract.md",
@@ -19,19 +20,17 @@ const required = [
 ];
 
 const missing = required.filter((file) => !fs.existsSync(path.join(root, file)));
-const chapters = fs.readdirSync(path.join(root, "book/chapters")).filter((name) => name.endsWith(".md"));
-const appendices = fs.readdirSync(path.join(root, "book/appendices")).filter((name) => name.endsWith(".md"));
-const manuscript = fs.readFileSync(path.join(root, "book/manuscript.md"), "utf8");
+const manuscriptContent = fs.readFileSync(path.join(root, manuscript.target), "utf8");
 
 const checks = [
   ["required files", missing.length === 0, missing.join(", ")],
   ["chapter count", chapters.length === 14, String(chapters.length)],
   ["appendix count", appendices.length === 5, String(appendices.length)],
-  ["mermaid diagrams", (manuscript.match(/```mermaid/g) || []).length >= 13, String((manuscript.match(/```mermaid/g) || []).length)],
-  ["java mentions", manuscript.includes("Java"), ""],
-  ["go mentions", manuscript.includes("Go"), ""],
-  ["python mentions", manuscript.includes("Python"), ""],
-  ["traceId contract", manuscript.includes("traceId"), ""]
+  ["mermaid diagrams", (manuscriptContent.match(/```mermaid/g) || []).length >= 13, String((manuscriptContent.match(/```mermaid/g) || []).length)],
+  ["java mentions", manuscriptContent.includes("Java"), ""],
+  ["go mentions", manuscriptContent.includes("Go"), ""],
+  ["python mentions", manuscriptContent.includes("Python"), ""],
+  ["traceId contract", manuscriptContent.includes("traceId"), ""]
 ];
 
 let ok = true;

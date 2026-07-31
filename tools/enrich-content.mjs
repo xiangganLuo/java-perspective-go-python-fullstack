@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { manuscript as manuscriptTarget, sourceFiles } from "./book-structure.mjs";
 
 const root = process.cwd();
 
@@ -242,18 +243,9 @@ for (const item of enrichments) {
   }
 }
 
-const ordered = [
-  "book/chapters/00-preface.md",
-  ...Array.from({ length: 13 }, (_, i) => {
-    const prefix = String(i + 1).padStart(2, "0");
-    return fs.readdirSync(path.join(root, "book/chapters")).find((name) => name.startsWith(prefix + "-"));
-  }).map((name) => "book/chapters/" + name),
-  ...fs.readdirSync(path.join(root, "book/appendices")).sort().map((name) => "book/appendices/" + name)
-];
-
-const manuscript = ordered
+const manuscript = sourceFiles
   .map((file) => fs.readFileSync(path.join(root, file), "utf8").trim())
   .join("\n\n---\n\n");
-fs.writeFileSync(path.join(root, "book/manuscript.md"), manuscript + "\n", "utf8");
+fs.writeFileSync(path.join(root, manuscriptTarget.target), manuscript + "\n", "utf8");
 
 console.log("Enriched chapter content and rebuilt manuscript.");
