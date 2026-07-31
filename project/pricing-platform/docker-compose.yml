@@ -1,4 +1,21 @@
 services:
+  go-gateway:
+    image: golang:1.22
+    working_dir: /app
+    volumes:
+      - ./go-gateway:/app
+    command: go run main.go
+    environment:
+      JAVA_SERVICE_URL: http://java-price-service:8081
+      PYTHON_SERVICE_URL: http://python-analysis-service:8082
+    ports:
+      - "8080:8080"
+    depends_on:
+      java-price-service:
+        condition: service_healthy
+      python-analysis-service:
+        condition: service_healthy
+
   java-price-service:
     image: eclipse-temurin:21-jdk
     working_dir: /app
@@ -7,6 +24,12 @@ services:
     command: sh -c "javac src/com/javago/pricing/PriceService.java && java -cp src com.javago.pricing.PriceService"
     ports:
       - "8081:8081"
+    healthcheck:
+      test: ["CMD", "bash", "-c", "</dev/tcp/localhost/8081"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 30s
 
   python-analysis-service:
     image: python:3.12-slim
@@ -16,3 +39,9 @@ services:
     command: python app.py
     ports:
       - "8082:8082"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8082/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s

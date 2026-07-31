@@ -35,3 +35,25 @@ python app.py
 cd ../go-gateway
 go run main.go
 ```
+
+网关会聚合 Java 价格与 Python 分析两段数据：
+
+```powershell
+Invoke-RestMethod -Method Get -Uri "http://localhost:8080/api/v1/prices/SKU-1001?memberLevel=GOLD"
+```
+
+返回 `data.price`（Java 计算结果）与 `data.analysis`（Python 分析结果）。Python 服务未启动时网关自动降级，`data.analysis` 为 `null`，网关日志记录错误码 50002，主链路不受影响。
+
+下游地址可用环境变量覆盖（默认 localhost，docker-compose 内用服务名）：
+
+| 环境变量 | 默认值 |
+| --- | --- |
+| `JAVA_SERVICE_URL` | `http://localhost:8081` |
+| `PYTHON_SERVICE_URL` | `http://localhost:8082` |
+
+一键编排与全链路验证：
+
+```powershell
+docker compose up
+.\scripts\smoke-test.ps1
+```

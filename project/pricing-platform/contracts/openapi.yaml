@@ -3,6 +3,27 @@ info:
   title: Pricing Platform API
   version: 1.0.0
 paths:
+  /api/v1/prices/{sku}:
+    get:
+      summary: Gateway aggregated price with analysis (data.price + data.analysis)
+      parameters:
+        - name: sku
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: memberLevel
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [NORMAL, SILVER, GOLD]
+            default: NORMAL
+      responses:
+        "200":
+          description: Unified response; data.analysis is null when python service degrades
+        "504":
+          description: Java price service timeout (code 50401)
   /api/v1/price/calculate:
     post:
       summary: Calculate final product price

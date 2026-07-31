@@ -41,5 +41,6 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
+    # 绑定 0.0.0.0 以便容器内可被其他服务访问；本地直接运行同样可用。
     print("python-analysis-service started on http://localhost:8082")
-    HTTPServer(("localhost", 8082), Handler).serve_forever()
+    HTTPServer(("0.0.0.0", 8082), Handler).serve_forever()
