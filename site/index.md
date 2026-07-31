@@ -5,9 +5,6 @@ hero:
   name: "Java Go Python"
   text: "全栈协同实战"
   tagline: "用 Java 经验低成本掌握 Go 网关、Python 数据辅助层，以及 Java+Go+Python 企业级协同链路。"
-  image:
-    src: /architecture-cover.svg
-    alt: Java Go Python 多语言协同架构图
   actions:
     - theme: brand
       text: 开始阅读
