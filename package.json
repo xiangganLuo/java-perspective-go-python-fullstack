@@ -12,6 +12,7 @@
     "site:sync": "npm run book:build && node tools/sync-vitepress-site.mjs"
   },
   "devDependencies": {
+    "mermaid": "^11.16.0",
     "vitepress": "^1.6.4"
   }
 }

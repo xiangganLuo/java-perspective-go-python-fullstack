@@ -1,4 +1,20 @@
 import { defineConfig } from "vitepress";
+import type MarkdownIt from "markdown-it";
+
+function renderMermaid(md: MarkdownIt) {
+  const defaultFence = md.renderer.rules.fence?.bind(md.renderer.rules);
+
+  md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+    const token = tokens[idx];
+    const language = token.info.trim().split(/\s+/)[0];
+
+    if (language === "mermaid") {
+      return `<MermaidDiagram code="${encodeURIComponent(token.content)}" />`;
+    }
+
+    return defaultFence ? defaultFence(tokens, idx, options, env, self) : self.renderToken(tokens, idx, options);
+  };
+}
 
 export default defineConfig({
   title: "Java 视角下的 Go 与 Python 全栈协同实战",
@@ -109,6 +125,9 @@ export default defineConfig({
     socialLinks: []
   },
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
+    config(md) {
+      renderMermaid(md);
+    }
   }
 });

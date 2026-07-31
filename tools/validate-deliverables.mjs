@@ -21,6 +21,8 @@ const required = [
 
 const missing = required.filter((file) => !fs.existsSync(path.join(root, file)));
 const manuscriptContent = fs.readFileSync(path.join(root, manuscript.target), "utf8");
+const renderedChapter = path.join(root, "site/.vitepress/dist/ebook/chapters/01-why-java-engineers-need-multilingual.html");
+const renderedChapterContent = fs.existsSync(renderedChapter) ? fs.readFileSync(renderedChapter, "utf8") : "";
 
 const checks = [
   ["required files", missing.length === 0, missing.join(", ")],
@@ -30,7 +32,8 @@ const checks = [
   ["java mentions", manuscriptContent.includes("Java"), ""],
   ["go mentions", manuscriptContent.includes("Go"), ""],
   ["python mentions", manuscriptContent.includes("Python"), ""],
-  ["traceId contract", manuscriptContent.includes("traceId"), ""]
+  ["traceId contract", manuscriptContent.includes("traceId"), ""],
+  ["mermaid transformed", renderedChapterContent.includes("mermaid-diagram") && !renderedChapterContent.includes("language-mermaid"), renderedChapterContent ? "" : "run npm run docs:build first"]
 ];
 
 let ok = true;
