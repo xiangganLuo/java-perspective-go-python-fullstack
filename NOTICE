@@ -1,0 +1,15 @@
+Java 视角下的 Go 与 Python 全栈协同实战
+Copyright 2026 luoxianggan
+
+This repository uses a dual-license model:
+
+- Book manuscript, diagrams, website prose, and other non-code educational content:
+  Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+  (CC BY-NC-SA 4.0).
+
+- Example code, scripts, configuration files, and the practical demo project:
+  Apache License 2.0.
+
+When reusing or adapting the book content, credit the author as:
+
+  luoxianggan，《Java 视角下的 Go 与 Python 全栈协同实战》

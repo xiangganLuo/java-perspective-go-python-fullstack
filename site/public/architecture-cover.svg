@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+  <title id="title">Java Go Python 多语言协同架构图</title>
+  <desc id="desc">展示 Go 网关、Java 核心服务、Python 分析服务协同的架构封面图。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#eef5f1"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#19324a" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <rect width="720" height="520" rx="32" fill="url(#bg)"/>
+  <path d="M92 390 C180 300, 222 316, 300 248 S470 114, 624 140" fill="none" stroke="#9ab8ff" stroke-width="10" stroke-linecap="round" opacity=".55"/>
+  <path d="M96 134 C202 208, 282 168, 374 248 S520 380, 634 336" fill="none" stroke="#73c7a7" stroke-width="10" stroke-linecap="round" opacity=".55"/>
+  <g filter="url(#shadow)">
+    <rect x="70" y="186" width="160" height="116" rx="18" fill="#ffffff" stroke="#d8e1ec"/>
+    <text x="150" y="234" text-anchor="middle" font-family="Segoe UI, Arial" font-size="28" font-weight="700" fill="#2f6fdd">Go</text>
+    <text x="150" y="266" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="16" fill="#53616f">流量网关</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="280" y="92" width="176" height="124" rx="18" fill="#ffffff" stroke="#d8e1ec"/>
+    <text x="368" y="142" text-anchor="middle" font-family="Segoe UI, Arial" font-size="28" font-weight="700" fill="#c54f32">Java</text>
+    <text x="368" y="174" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="16" fill="#53616f">核心业务层</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="488" y="232" width="170" height="120" rx="18" fill="#ffffff" stroke="#d8e1ec"/>
+    <text x="573" y="281" text-anchor="middle" font-family="Segoe UI, Arial" font-size="28" font-weight="700" fill="#347a45">Python</text>
+    <text x="573" y="313" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="16" fill="#53616f">数据辅助层</text>
+  </g>
+  <g fill="none" stroke="#34495e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M230 238 C254 212, 260 188, 280 164"/>
+    <path d="M456 158 C496 172, 514 202, 538 232"/>
+    <path d="M488 298 C394 340, 300 320, 230 272"/>
+  </g>
+  <g fill="#34495e">
+    <path d="M277 168 l8 -16 l-17 5 z"/>
+    <path d="M534 229 l15 9 l-4 -17 z"/>
+    <path d="M235 276 l-18 -6 l9 16 z"/>
+  </g>
+  <text x="360" y="438" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="24" font-weight="700" fill="#1f2d3d">多语言协同全栈架构</text>
+  <text x="360" y="474" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="16" fill="#667789">从 Java 经验出发，落地 Go + Python 工程化能力</text>
+</svg>

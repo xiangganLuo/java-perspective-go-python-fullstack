@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: Pricing Platform API
+  version: 1.0.0
+paths:
+  /api/v1/price/calculate:
+    post:
+      summary: Calculate final product price
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [sku, memberLevel]
+              properties:
+                sku:
+                  type: string
+                memberLevel:
+                  type: string
+                  enum: [NORMAL, SILVER, GOLD]
+      responses:
+        "200":
+          description: Unified response
+  /api/v1/analyze:
+    post:
+      summary: Analyze price trend and score
+      responses:
+        "200":
+          description: Analysis response

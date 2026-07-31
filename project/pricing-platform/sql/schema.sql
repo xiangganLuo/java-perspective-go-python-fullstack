@@ -1,0 +1,13 @@
+CREATE TABLE product_price (
+  sku VARCHAR(64) PRIMARY KEY,
+  base_price_cents INT NOT NULL,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE price_snapshot (
+  id BIGINT PRIMARY KEY,
+  sku VARCHAR(64) NOT NULL,
+  final_price_cents INT NOT NULL,
+  trace_id VARCHAR(128) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
