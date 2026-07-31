@@ -4,20 +4,12 @@
     role="img"
     aria-label="多语言协同全栈架构：Go 流量网关聚合 Java 核心业务层与 Python 数据辅助层"
   >
-    <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg viewBox="24 44 432 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
         <marker id="hero-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
           <path d="M1.5 1.5 L8 5 L1.5 8.5 Z" class="hero-arrow-head" />
         </marker>
       </defs>
-
-      <!-- 卡片底 -->
-      <rect x="6" y="6" width="468" height="408" rx="24" class="hero-card" />
-
-      <!-- 背景装饰曲线（呼应三门语言的品牌色） -->
-      <path d="M30 150 C 120 90 210 210 300 130 S 440 90 460 120" class="hero-deco hero-deco--go" />
-      <path d="M20 260 C 130 320 240 200 340 260 S 450 300 466 270" class="hero-deco hero-deco--python" />
-      <path d="M60 60 C 160 30 300 80 440 40" class="hero-deco hero-deco--java" />
 
       <!-- Java 节点（核心业务层） -->
       <rect x="196" y="52" width="138" height="76" rx="12" class="hero-node hero-node--java" />
@@ -68,23 +60,6 @@
   height: auto;
   font-family: var(--vp-font-family-base);
 }
-
-.hero-card {
-  fill: var(--vp-c-bg-soft);
-  stroke: var(--vp-c-divider);
-  stroke-width: 1;
-}
-
-.hero-deco {
-  fill: none;
-  stroke-width: 10;
-  stroke-linecap: round;
-  opacity: 0.16;
-}
-
-.hero-deco--go { stroke: #00add8; }
-.hero-deco--java { stroke: #f89820; }
-.hero-deco--python { stroke: #3776ab; }
 
 .hero-node {
   fill: var(--vp-c-bg);
