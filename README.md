@@ -10,7 +10,7 @@
 
 | 入口 | 说明 |
 | --- | --- |
-| [site](site) | VitePress 静态站源码，适合部署到 Cloudflare Pages |
+| [site](site) | VitePress 静态站源码 |
 | [book/chapters](book/chapters) | 唯一人工维护的分章正文源 |
 | [book/appendices](book/appendices) | 唯一人工维护的附录源 |
 | `book/manuscript.md` | 由 `npm run book:build` 生成的全书合并稿 |
@@ -41,22 +41,14 @@ Invoke-RestMethod -Method Post -Uri http://localhost:8081/api/v1/price/calculate
 
 Go 与 Python 服务代码也已放入仓库。若本机安装 Go/Python，可按 [project/pricing-platform/README.md](project/pricing-platform/README.md) 启动完整链路。
 
-## 静态站部署
+## 本地构建
 
-本项目已配置 VitePress，可直接部署到 Cloudflare Pages、Netlify、Vercel 或 GitHub Pages。
+本项目已配置 VitePress，可在本地生成静态站点产物。
 
 ```powershell
 npm install
 npm run docs:build
 ```
-
-部署平台配置：
-
-| 配置项 | 值 |
-| --- | --- |
-| Build command | `npm run docs:build` |
-| Output directory | `site/.vitepress/dist` |
-| Node version | `22` |
 
 本地预览：
 

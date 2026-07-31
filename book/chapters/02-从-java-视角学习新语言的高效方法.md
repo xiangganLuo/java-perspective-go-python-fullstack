@@ -153,7 +153,7 @@ class PriceAnalysisRequest:
 
 ## 章节综合案例：配置多语言统一开发、联调环境
 
-本仓库采用 `book/` 管理正文、`project/pricing-platform/` 管理实战源码、`docs/` 管理规范与验收报告。读者可以从 README 进入书稿，也可以直接按部署指南启动三个服务。
+本仓库采用 `book/` 管理正文、`project/pricing-platform/` 管理实战源码、`docs/` 管理规范与验收报告。读者可以从 README 进入书稿，也可以直接进入 GitHub 项目目录查看三个服务的启动说明。
 
 ### 场景输入
 

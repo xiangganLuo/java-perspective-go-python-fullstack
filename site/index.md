@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: "Java 视角下的 Go 与 Python 全栈协同实战"
-  text: "从 Java 经验到 Go 网关、Python 数据辅助层与多语言企业架构"
-  tagline: "luoxianggan 著。用 Java 经验低成本掌握 Go 网关、Python 数据辅助层，以及 Java+Go+Python 企业级协同链路。"
+  name: "Java Go Python"
+  text: "全栈协同实战"
+  tagline: "用 Java 经验低成本掌握 Go 网关、Python 数据辅助层，以及 Java+Go+Python 企业级协同链路。"
   image:
     src: /architecture-cover.svg
     alt: Java Go Python 多语言协同架构图
@@ -14,7 +14,7 @@ hero:
       link: /ebook/
     - theme: alt
       text: 查看实战项目
-      link: /project/
+      link: https://github.com/xiangganLuo/java-perspective-go-python-fullstack/tree/main/project/pricing-platform
 
 features:
   - title: Java 视角
@@ -36,16 +36,7 @@ features:
 
 ## 架构链路
 
-```mermaid
-flowchart LR
-  Reader[读者] --> Book[电子书章节]
-  Book --> Go[Go 流量网关]
-  Book --> Java[Java 核心服务]
-  Book --> Python[Python 分析服务]
-  Go --> Java
-  Java --> Python
-  Java --> DB[(价格数据)]
-```
+<HomepageArchitecture />
 
 ## 版权协议
 

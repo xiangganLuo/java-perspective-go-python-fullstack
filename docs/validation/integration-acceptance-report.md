@@ -29,7 +29,7 @@ sequenceDiagram
 
 ## 当前验收状态
 
-Java 核心服务已在本机 JDK 21 编译运行，并完成真实 HTTP 请求验收。完整 Go/Python 联调依赖本机安装 Go 与可用 Python 解释器，已在部署指南中标注。
+Java 核心服务已在本机 JDK 21 编译运行，并完成真实 HTTP 请求验收。完整 Go/Python 联调依赖本机安装 Go 与可用 Python 解释器，运行前置条件已在项目 README 中标注。
 
 ## Java 服务实测结果
 

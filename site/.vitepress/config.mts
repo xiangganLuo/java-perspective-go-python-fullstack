@@ -27,9 +27,10 @@ export default defineConfig({
     logo: "/architecture-cover.svg",
     siteTitle: "Java Go Python",
     nav: [
-      { text: "电子书", link: "/ebook/" },
-      { text: "实战项目", link: "/project/" },
-      { text: "部署", link: "/deploy/" }
+      {
+        text: "实战项目",
+        link: "https://github.com/xiangganLuo/java-perspective-go-python-fullstack/tree/main/project/pricing-platform"
+      }
     ],
     outline: {
       level: [2, 3],
@@ -112,13 +113,12 @@ export default defineConfig({
       "/project/": [
         {
           text: "实战项目",
-          items: [{ text: "项目说明", link: "/project/" }]
-        }
-      ],
-      "/deploy/": [
-        {
-          text: "部署",
-          items: [{ text: "部署指南", link: "/deploy/" }]
+          items: [
+            {
+              text: "GitHub 源码",
+              link: "https://github.com/xiangganLuo/java-perspective-go-python-fullstack/tree/main/project/pricing-platform"
+            }
+          ]
         }
       ]
     },

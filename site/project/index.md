@@ -1,6 +1,8 @@
 # 实战项目
 
-全书实战项目是“多语言协同电商价格计算平台”。它把书中的概念落到一条真实链路：前端请求进入 Go 网关，Java 服务计算核心价格，Python 服务提供价格分析。
+全书实战项目是“多语言协同电商价格计算平台”。源码已放在 GitHub 仓库中，建议直接进入项目目录查看代码、协议和本地运行说明。
+
+[前往 GitHub 实战项目](https://github.com/xiangganLuo/java-perspective-go-python-fullstack/tree/main/project/pricing-platform)
 
 ## 服务拆分
 
